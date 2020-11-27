@@ -25,7 +25,7 @@ public final class Logic {
     private boolean free(Cell[] steps)  {
         for (Cell cell : steps) {
             for (int i = 0; i < index; i++) {
-                if (cell == figures[i].position()) {
+                if (cell.equals(figures[i].position())) {
                     return false;
                 }
             }

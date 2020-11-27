@@ -12,15 +12,15 @@ import static org.junit.Assert.assertThat;
 public class BishopBlackTest {
 
     @Test
-    public void BishopBlackWayTrue() {
+    public void BishopBlackWayTrue() throws ImpossibleMoveException{
         BishopBlack figure = new BishopBlack(Cell.C1);
         Cell[] expectedWay = figure.way(Cell.G5);
         Cell[] trueWay = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
         assertThat(expectedWay, is(trueWay));
     }
 
-    @Test(expected = IllegalStateException.class)
-    public void BishopBlackWayFalse() {
+    @Test(expected = ImpossibleMoveException.class)
+    public void BishopBlackWayFalse() throws ImpossibleMoveException{
         BishopBlack figure = new BishopBlack(Cell.C1);
         Cell[] expectedWay = figure.way(Cell.C2);
     }
